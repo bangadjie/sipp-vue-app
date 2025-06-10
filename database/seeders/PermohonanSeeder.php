@@ -15,6 +15,7 @@ class PermohonanSeeder extends Seeder
     {
         DB::table('permohonans')->insert([
             [
+                'user_id' => 1,
                 'instanses_id' => 1,
                 'category_id' => 1,
                 'name' => 'adjie',
@@ -22,6 +23,7 @@ class PermohonanSeeder extends Seeder
                 'status_id' => 1,
             ],
             [
+                'user_id' => 2,
                 'instanses_id' => 2,
                 'category_id' => 2,
                 'name' => 'adjie',
@@ -29,6 +31,7 @@ class PermohonanSeeder extends Seeder
                 'status_id' => 2,
             ],
             [
+                'user_id' => 3,
                 'instanses_id' => 3,
                 'category_id' => 3,
                 'name' => fake()->name(),
@@ -36,6 +39,5 @@ class PermohonanSeeder extends Seeder
                 'status_id' => 3,
             ],
         ]);
-
     }
 }

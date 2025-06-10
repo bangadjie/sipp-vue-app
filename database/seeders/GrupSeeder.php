@@ -1,4 +1,5 @@
 <?php
+
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
@@ -17,11 +18,9 @@ class GrupSeeder extends Seeder
         // factory(GrupFactory::class, 10)->create();
 
         DB::table('grups')->insert([
-            ['name' => 'admin'],
-            ['name' => 'admin_opd'],
-            ['name' => 'user'],
+            ['name' => 'SuperAdmin'],
+            ['name' => 'Admin'],
+            ['name' => 'User'],
         ]);
     }
 }
-
-?>

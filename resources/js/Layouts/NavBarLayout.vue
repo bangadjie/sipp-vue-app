@@ -45,6 +45,16 @@ const showingNavigationDropdown = ref(false);
                             Management grup
                         </NavLink>
                     </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                        <NavLink :href="route('management_instansi')" :active="route().current('management_instansi')">
+                            Management instansi
+                        </NavLink>
+                    </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                        <NavLink :href="route('permohonan')" :active="route().current('permohonan')">
+                            Permohonan
+                        </NavLink>
+                    </div>
                 </template>
 
                 <template v-else-if="userGrupId === 2">
@@ -53,11 +63,24 @@ const showingNavigationDropdown = ref(false);
                             Permohonan
                         </NavLink>
                     </div>
-                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <!-- <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                         <NavLink :href="route('detail_permohonan')" :active="route().current('detail_permohonan')">
                             Detail permohonan
                         </NavLink>
+                    </div> -->
+                </template>
+
+                <template v-else-if="userGrupId === 3">
+                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                        <NavLink :href="route('permohonan')" :active="route().current('permohonan')">
+                            Permohonan
+                        </NavLink>
                     </div>
+                    <!-- <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                        <NavLink :href="route('detail_permohonan')" :active="route().current('detail_permohonan')">
+                            Detail permohonan
+                        </NavLink>
+                    </div> -->
                 </template>
             </div>
 
@@ -104,8 +127,7 @@ const showingNavigationDropdown = ref(false);
                         <path :class="{
                             hidden: !showingNavigationDropdown,
                             'inline-flex': showingNavigationDropdown,
-                        }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M6 18L18 6M6 6l12 12" />
+                        }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
@@ -132,9 +154,9 @@ const showingNavigationDropdown = ref(false);
                 <ResponsiveNavLink :href="route('permohonan')" :active="route().current('permohonan')">
                     Permohonan
                 </ResponsiveNavLink>
-                <ResponsiveNavLink :href="route('detail_permohonan')" :active="route().current('detail_permohonan')">
+                <!-- <ResponsiveNavLink :href="route('detail_permohonan')" :active="route().current('detail_permohonan')">
                     Detail Permohonan
-                </ResponsiveNavLink>
+                </ResponsiveNavLink> -->
             </template>
         </div>
 

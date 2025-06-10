@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('permohonans', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('instanses_id')->unsigned();
             $table->bigInteger('category_id')->unsigned();
             // $table->Category_id();
@@ -25,6 +26,7 @@ return new class extends Migration
             $table->foreign('instanses_id')->references('id')->on('instanses')->onDelete('cascade');
             $table->foreign('status_id')->references('id')->on('statuses')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -34,6 +36,5 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('permohonans');
-
     }
 };

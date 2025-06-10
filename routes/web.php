@@ -19,6 +19,10 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+// Route::get('/HomeUser', function () {
+//     return Inertia::render('Home_User');
+// })->middleware(['auth', 'verified'])->name('HomeUser');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -60,6 +64,14 @@ Route::get('/management_grup', function () {
     return Inertia::render('Admin/ManagementGrup');
 })->middleware(['auth', 'verified'])->name('management_grup');
 
+Route::get('/management_instansi', function () {
+    return Inertia::render('Admin/ManagementInstansi');
+})->middleware(['auth', 'verified'])->name('management_instansi');
+
+Route::get('/Permohonan', function () {
+    return Inertia::render('Admin/Permohonan');
+})->middleware(['auth', 'verified'])->name('Permohonan');
+
 Route::get('/permohonan', function () {
     return Inertia::render('AdminOpd/Permohonan');
 })->middleware(['auth', 'verified'])->name('permohonan');
@@ -70,5 +82,4 @@ Route::get('/detail_permohonan', function () {
 
 
 // Route::get('/permohonans', [PermohonanController::class, 'index'])->name('permohonans.index');
-
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

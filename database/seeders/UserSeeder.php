@@ -17,8 +17,8 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
-                'name' => 'admin',
-                'email' => 'adjie@gmail.com',
+                'name' => 'superadmin',
+                'email' => 'superadmin@gmail.com',
                 'email_verified_at' => now(),
                 'password' => Hash::make('password'),
                 'grup_id' => 1,
@@ -26,8 +26,8 @@ class UserSeeder extends Seeder
                 'remember_token' => Str::random(10),
             ],
             [
-                'name' => fake()->name(),
-                'email' => fake()->unique()->safeEmail(),
+                'name' => 'admin',
+                'email' => 'admin@gmail.com',
                 'email_verified_at' => now(),
                 'password' => Hash::make('password'),
                 'grup_id' => 2,
@@ -35,8 +35,8 @@ class UserSeeder extends Seeder
                 'remember_token' => Str::random(10),
             ],
             [
-                'name' => fake()->name(),
-                'email' => fake()->unique()->safeEmail(),
+                'name' => 'user',
+                'email' => 'user@gmail.com',
                 'email_verified_at' => now(),
                 'password' => Hash::make('password'),
                 'grup_id' => 3,
@@ -46,3 +46,13 @@ class UserSeeder extends Seeder
         ]);
     }
 }
+
+// [
+//     'name' => fake()->name(),
+//     'email' => fake()->unique()->safeEmail(),
+//     'email_verified_at' => now(),
+//     'password' => Hash::make('password'),
+//     'grup_id' => 3,
+//     'instanses_id' => 3,
+//     'remember_token' => Str::random(10),
+// ],

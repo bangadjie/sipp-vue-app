@@ -1,16 +1,3 @@
-<script setup>
-import { ref } from 'vue';
-// import ApplicationLogo from '@/Components/ApplicationLogo.vue';
-// import Dropdown from '@/Components/Dropdown.vue';
-// import DropdownLink from '@/Components/DropdownLink.vue';
-// import NavLink from '@/Components/NavLink.vue';
-// import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
-// import { Link } from '@inertiajs/vue3';
-import NavBarLayout from './NavBarLayout.vue';
-
-const showingNavigationDropdown = ref(false);
-</script>
-
 <template>
     <div>
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
@@ -27,8 +14,19 @@ const showingNavigationDropdown = ref(false);
 
             <!-- Page Content -->
             <main>
-                <slot />
+                <slot name="default" :user="user" />
             </main>
         </div>
     </div>
 </template>
+
+<script setup>
+import { ref } from 'vue';
+import { usePage } from '@inertiajs/vue3';
+import NavBarLayout from './NavBarLayout.vue';
+
+const showingNavigationDropdown = ref(false);
+
+const { props } = usePage();
+const user = ref(props.auth.user);
+</script>

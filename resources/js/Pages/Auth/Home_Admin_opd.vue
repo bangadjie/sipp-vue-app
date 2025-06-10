@@ -7,7 +7,8 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-    <Head title="Dashboard" />
+
+    <Head title="Home_Admin_pdo" />
 
     <NavBarLayout>
         <template #header>

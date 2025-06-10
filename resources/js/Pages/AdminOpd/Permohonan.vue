@@ -3,9 +3,9 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import FormPermohonan from './FormPermohonan.vue';
 import TablePermohonan from './TablePermohonan.vue';
-import TableUser from './TableUser.vue';
-import TableGrup from './TableGrup.vue';
-import Tableinstansi from './Tableinstansi.vue';
+import TableUser from '../Admin/TableUser.vue';
+import TableGrup from '../Admin/TableGrup.vue';
+import Tableinstansi from '../Admin/Tableinstansi.vue';
 </script>
 
 
@@ -22,9 +22,9 @@ import Tableinstansi from './Tableinstansi.vue';
                 <div>
                     <!-- <FormPermohonan /> -->
                     <TablePermohonan />
-                    <TableUser />
-                    <TableGrup />
-                    <Tableinstansi />
+                    <!-- <TableUser /> -->
+                    <!-- <TableGrup /> -->
+                    <!-- <Tableinstansi /> -->
                 </div>
             </main>
         </div>
